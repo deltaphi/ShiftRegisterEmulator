@@ -5,9 +5,9 @@ The Sketch is set up so that the Arduinos can be Daisy-Chained.
 
 ## Hardware Notes
 
-The sketch does not use an external clock and does not use serial (almost all
-IO pins are needed). Make sure to have your Atmega programmed to the internal
-oscillator and an 8MHz clock.
+The sketch does not use serial (almost all IO pins are needed). It is set up
+not to use the Oscillator Pins. The Sketch can thus be used both with an
+external oscillator (e.g., Arduino Board) or without (e.g., Breadboard Setup).
 
 ### S88 Notes
 
@@ -38,6 +38,8 @@ lots of Atmega168 but no 4041B lying around.
 
 * Correct reception of 16 input bits
 * Debouncing of input pins over multiple reset-cycles
+* Figure out whether using the internal pullups is a good idea (might overload
+  the Atmegas' current capacity).
 
 # Dependencies
 
