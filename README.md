@@ -21,6 +21,14 @@ At least on a 16 MHz Arduino, this sketch worked with the most agressive S88
 timing I could find (~50us clock). Tests on an 8 MHz Arduino have not been
 perfomed yet.
 
+## Software Notes
+
+This sketch was written with [PlatformIO](https://platformio.org/) using the
+Arduino framework. It should easily be possible to build and upload it using
+the Arduino IDE. You need to rename [src/main.cpp] to something with a
+```.ino``` file extension and install the digitalWriteFast library in your
+Arduino IDE (not available through the library manager, sadly).
+
 ## Why emulate a shift register?
 
 This project started because I needed a bunch of shift register inputs and had
