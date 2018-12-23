@@ -2,16 +2,23 @@
 
 #include <digitalWriteFast/digitalWriteFast.h>
 
+// Defines for the shift register pins.
+// CLOCK_IN and PS_IN must be interrupt pins
 #define CLOCK_IN_PIN (2)
 #define PS_IN_PIN (3)
 #define DATA_OUT_PIN (9)
 #define DATA_IN_PIN (8)
 
+// The variable holding the actual bits that were read
 using RegisterType = uint8_t;
-using CounterType = uint8_t;
-
+constexpr RegisterType kInputPattern = 0x80; // Pattern where the highest bit of RegisterType is set
 volatile RegisterType bits;
-volatile CounterType counters[sizeof(bits)];
+
+// Counters for debouncing the inputs
+using CounterValueType = uint8_t; // Value-type for the counters
+using CountersIndexType = uint8_t; // Type for the index of counters
+constexpr CountersIndexType kNumCounters = sizeof(bits)*8;
+volatile CounterValueType counters[kNumCounters];
 
 void ClockISR() {
   uint8_t clockValue = digitalReadFast(CLOCK_IN_PIN);
@@ -23,7 +30,7 @@ void ClockISR() {
     // Falling edge. Sample the input register.
     uint8_t inputValue = digitalReadFast(DATA_IN_PIN);
     if (inputValue == HIGH) {
-      bits |= 0x80; // 0x01 << (sizeof(bits) - 1); // Why does the alternate not work?
+      bits |= kInputPattern;
     }
   }
 }
@@ -37,7 +44,7 @@ void PSISR() {
 void setup() {
   // put your setup code here, to run once:
   bits = 0;
-  for (uint8_t i = 0; i < sizeof(counters) / sizeof(CounterType); ++i) {
+  for (CountersIndexType i = 0; i < kNumCounters; ++i) {
     counters[i] = 0;
   }
 
