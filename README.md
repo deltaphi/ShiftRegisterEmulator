@@ -9,6 +9,24 @@ The sketch does not use serial (almost all IO pins are needed). It is set up
 not to use the Oscillator Pins. The Sketch can thus be used both with an
 external oscillator (e.g., Arduino Board) or without (e.g., Breadboard Setup).
 
+Attempts have been made for a minimal parts setup, where the internal pullup
+resistors are used. Thus, you would need only the Atmega and a pull-up resistor
+for the reset pin. Unfortunately, I have had repeated trouble with the internal
+pull-ups not working as expected (e.g., pulling *down* instead or being an
+apparent short), so the default setup is to use external pullups.
+
+In a 3.3V setting, the sketch works when you wire the Atmega up as follows:
+* XTAL pins are left open
+* All other pins are pulled high using 10k or 47k. Note that the DATA_OUT pin
+  does not actually need a pull-up, but having one doesn't hurt functionality.
+
+Note that you can conveniently use star-shaped resistor networks to pull all
+pins high with only a few parts.
+
+Note that I have not calculated the input current requirements on the shift
+register pins. I use a 74HC367 current driver wired to an ESP32 to drive
+the shift register.
+
 ### S88 Notes
 
 Here is a not if you want to use this sketch to simulate an S88 module for your
