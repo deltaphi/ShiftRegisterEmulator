@@ -9,7 +9,7 @@
 #define DATA_OUT_PIN (1)
 #define DATA_IN_PIN (0)
 
-#define PARALLEL_INPUT_PIN_MODE (INPUT_PULLUP)
+#define PARALLEL_INPUT_PIN_MODE (INPUT)
 
 // The variable holding the actual bits that were read
 using RegisterType = uint16_t;
@@ -81,10 +81,10 @@ void setup() {
   pinModeFast(A5, PARALLEL_INPUT_PIN_MODE);
 
   // Configure the Interrupt and Data registers
-  pinModeFast(CLOCK_IN_PIN, INPUT_PULLUP);
-  pinModeFast(PS_IN_PIN, INPUT_PULLUP);
+  pinModeFast(CLOCK_IN_PIN, INPUT);
+  pinModeFast(PS_IN_PIN, INPUT);
   pinModeFast(DATA_OUT_PIN, OUTPUT);
-  pinModeFast(DATA_IN_PIN, INPUT_PULLUP);
+  pinModeFast(DATA_IN_PIN, INPUT);
   
   digitalWriteFast(DATA_OUT_PIN, LOW);
 
