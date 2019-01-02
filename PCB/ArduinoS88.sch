@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:CANSwitchboard-cache
+LIBS:ArduinoS88-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -287,7 +287,7 @@ U 1 1 5C2B99C4
 P 6350 5700
 F 0 "J2" H 6322 5673 50  0000 R CNN
 F 1 "S88 Input" H 6322 5582 50  0000 R CNN
-F 2 "Connector_Molex:Molex_KK-254_AE-6410-06A_1x06_P2.54mm_Vertical" H 6350 5700 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Horizontal" H 6350 5700 50  0001 C CNN
 F 3 "~" H 6350 5700 50  0001 C CNN
 	1    6350 5700
 	-1   0    0    -1  
@@ -357,12 +357,12 @@ Wire Wire Line
 $Comp
 L Connector:Conn_01x06_Male J1
 U 1 1 5C2E8645
-P 6350 6350
-F 0 "J1" H 6323 6323 50  0000 R CNN
-F 1 "S88 Output" H 6323 6232 50  0000 R CNN
-F 2 "Connector_Molex:Molex_KK-254_AE-6410-06A_1x06_P2.54mm_Vertical" H 6350 6350 50  0001 C CNN
-F 3 "~" H 6350 6350 50  0001 C CNN
-	1    6350 6350
+P 6350 7000
+F 0 "J1" H 6323 6973 50  0000 R CNN
+F 1 "S88 Output" H 6323 6882 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Horizontal" H 6350 7000 50  0001 C CNN
+F 3 "~" H 6350 7000 50  0001 C CNN
+	1    6350 7000
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -395,13 +395,6 @@ Wire Wire Line
 	6150 5600 6100 5600
 Wire Wire Line
 	6100 5600 6100 6250
-Connection ~ 6100 6250
-Wire Wire Line
-	6100 6250 6150 6250
-Wire Wire Line
-	6050 6000 6050 6650
-Wire Wire Line
-	6050 6650 6150 6650
 Connection ~ 6050 6000
 Wire Wire Line
 	6050 6000 6150 6000
@@ -442,25 +435,13 @@ Wire Wire Line
 Wire Wire Line
 	5800 3950 5950 3950
 Wire Wire Line
-	5950 3950 5950 6150
-Wire Wire Line
-	5950 6150 6150 6150
-Wire Wire Line
-	6000 5900 6000 6550
-Wire Wire Line
 	6000 5900 6150 5900
-Wire Wire Line
-	6000 6550 6150 6550
 Wire Wire Line
 	5900 4050 5900 5700
 Wire Wire Line
 	5900 5700 6150 5700
 Wire Wire Line
 	5800 4050 5900 4050
-Wire Wire Line
-	5900 5700 5900 6350
-Wire Wire Line
-	5900 6350 6150 6350
 Connection ~ 5900 5700
 Wire Wire Line
 	5800 4150 5850 4150
@@ -468,10 +449,6 @@ Wire Wire Line
 	5850 4150 5850 5800
 Wire Wire Line
 	5850 5800 6150 5800
-Wire Wire Line
-	5850 5800 5850 6450
-Wire Wire Line
-	5850 6450 6150 6450
 Connection ~ 5850 5800
 $Comp
 L Device:R R2
@@ -820,4 +797,114 @@ F 3 " ~" H 2175 750 50  0001 C CNN
 	1    3450 1300
 	1    0    0    -1  
 $EndComp
+$Comp
+L Connector:Conn_01x06_Male J10
+U 1 1 5C2E0B83
+P 6350 6350
+F 0 "J10" H 6322 6323 50  0000 R CNN
+F 1 "S88 Input" H 6322 6232 50  0000 R CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-06A_1x06_P2.54mm_Vertical" H 6350 6350 50  0001 C CNN
+F 3 "~" H 6350 6350 50  0001 C CNN
+	1    6350 6350
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5850 7100 6150 7100
+Wire Wire Line
+	5850 5800 5850 6450
+Wire Wire Line
+	5950 6800 6150 6800
+Wire Wire Line
+	5950 3950 5950 6800
+Wire Wire Line
+	6100 6250 6100 6900
+Wire Wire Line
+	6100 6900 6150 6900
+Connection ~ 6100 6250
+Wire Wire Line
+	6100 6250 6150 6250
+Wire Wire Line
+	5900 7000 6150 7000
+Wire Wire Line
+	5900 5700 5900 6350
+Wire Wire Line
+	6000 7200 6150 7200
+Wire Wire Line
+	6000 5900 6000 6550
+Wire Wire Line
+	6050 7300 6150 7300
+Wire Wire Line
+	6050 6000 6050 6650
+Wire Wire Line
+	6150 6650 6050 6650
+Connection ~ 6050 6650
+Wire Wire Line
+	6050 6650 6050 7300
+Wire Wire Line
+	6150 6550 6000 6550
+Connection ~ 6000 6550
+Wire Wire Line
+	6000 6550 6000 7200
+Wire Wire Line
+	6150 6450 5850 6450
+Connection ~ 5850 6450
+Wire Wire Line
+	5850 6450 5850 7100
+Wire Wire Line
+	6150 6350 5900 6350
+Connection ~ 5900 6350
+Wire Wire Line
+	5900 6350 5900 7000
+Wire Wire Line
+	6000 5350 5800 5350
+Wire Wire Line
+	5800 5350 5800 6150
+Wire Wire Line
+	5800 6150 6150 6150
+Text Label 8750 2750 0    50   ~ 0
+In0
+Text Label 8750 2850 0    50   ~ 0
+In1
+Text Label 8750 2950 0    50   ~ 0
+In2
+Text Label 8750 3050 0    50   ~ 0
+In3
+Text Label 8750 3150 0    50   ~ 0
+In4
+Text Label 8750 3250 0    50   ~ 0
+In5
+Text Label 8750 3350 0    50   ~ 0
+In6
+Text Label 8750 3450 0    50   ~ 0
+In7
+Text Label 8750 3550 0    50   ~ 0
+In8
+Text Label 8750 3650 0    50   ~ 0
+In9
+Text Label 8750 3750 0    50   ~ 0
+In10
+Text Label 8750 3850 0    50   ~ 0
+In11
+Text Label 8750 3950 0    50   ~ 0
+In12
+Text Label 8750 4050 0    50   ~ 0
+In13
+Text Label 8750 4150 0    50   ~ 0
+In14
+Text Label 6800 3650 0    50   ~ 0
+In15
+Text Label 6000 7200 0    50   ~ 0
+S88_Reset
+Text Label 5850 7100 0    50   ~ 0
+S88_PS
+Text Label 5900 7000 0    50   ~ 0
+S88_CLK
+Text Label 5950 6800 0    50   ~ 0
+S88_DataOut
+Text Label 6000 5500 0    50   ~ 0
+S88_DataIn
+Text Label 4050 2650 0    50   ~ 0
+Cfg0
+Text Label 4050 2850 0    50   ~ 0
+Cfg1
 $EndSCHEMATC
