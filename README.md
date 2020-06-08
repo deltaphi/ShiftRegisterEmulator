@@ -3,6 +3,8 @@ An emulator for a 16-bit shift register. The behavior of this Sketch mimicks
 the behavior of an S88 module (i.e., a chain of two 4014B Chips).
 The Sketch is set up so that the Arduinos can be Daisy-Chained.
 
+![PlatformIO CI](https://github.com/deltaphi/ShiftRegisterEmulator/workflows/PlatformIO%20CI/badge.svg?event=push)
+
 ## Hardware Notes
 
 The sketch does not use serial (almost all IO pins are needed). It is set up
